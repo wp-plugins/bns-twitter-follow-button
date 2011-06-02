@@ -2,8 +2,8 @@
 /*
 Plugin Name: BNS Twitter Follow Button
 Plugin URI: http://buynowshop.com/plugins/bns-tfbutton
-Description: Based on the (JavaScript) Twitter Follow Button (https://twitter.com/about/resources/followbutton)
-Version: 0.1.1
+Description: Based on the (JavaScript) Twitter Follow Button (https://twitter.com/about/resources/followbutton) featuring all of the functionality offered including language support.
+Version: 0.2
 Author: Edward Caissie
 Author URI: http://edwardcaissie.com/
 */
@@ -37,7 +37,7 @@ class BNS_TFButton_Widget extends WP_Widget {
       $button       = $instance['button']; // Button color
       $text_color   = $instance['text_color']; // Text color
       $link_color   = $instance['link_color']; // Link color
-      // $lang        = $instance['lang']; // Language - default: English
+      $lang         = $instance['lang']; // Language - default: English
       $width        = $instance['width']; // Width
       $align        = $instance['align']; // Alignment
       
@@ -50,21 +50,10 @@ class BNS_TFButton_Widget extends WP_Widget {
 
       /* Display stuff based on widget settings. */
       ?>
-        <a href="http://twitter.com/<?php echo $twitter_name; ?>" class="twitter-follow-button" data-show-count=<?php !$show_count ? printf( '"false"' ) : printf( '"true"' ); ?> data-button=<?php !$button ? printf( '"blue"' ) : printf( '"grey"' ); ?> data-text-color="<?php echo $text_color; ?>" data-link-color="<?php echo $link_color; ?>" data-width=<?php printf( $width ); ?> data-align=<?php !$align ? printf( '"left"' ) : printf( '"right"' ); ?> >Follow @<?php echo $twitter_name; ?></a>
+        <a href="http://twitter.com/<?php echo $twitter_name; ?>" class="twitter-follow-button" data-show-count=<?php !$show_count ? printf( '"false"' ) : printf( '"true"' ); ?> data-button=<?php !$button ? printf( '"blue"' ) : printf( '"grey"' ); ?> data-text-color="<?php echo $text_color; ?>" data-link-color="<?php echo $link_color; ?>" data-width=<?php printf( $width ); ?> data-align=<?php !$align ? printf( '"left"' ) : printf( '"right"' ); ?> data-lang="<?php printf( $lang ); ?>" >Follow @<?php echo $twitter_name; ?></a>
         <script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
       <?php
-      /* Test display of variables  
-      echo 'BACON! <br />'; // Benchmark
-      echo 'Twitter Name: ' . $twitter_name . '<br />';
-      echo 'Show Count: ' . $show_count . '<br />';
-      echo 'Button: ' . $button . '<br />';
-      echo 'Text: ' . $text_color . '<br />';
-      echo 'Link: ' . $link_color . '<br />';
-      echo 'Width: ' . $width . '<br />';
-      echo 'Align: ' . $align . '<br />';
-      // echo 'Language: ' . $lang . '<br />';
-      ---- */      
-
+            
       /* After widget (defined by themes). */
       echo $after_widget;
   }
@@ -79,7 +68,7 @@ class BNS_TFButton_Widget extends WP_Widget {
       $instance['button']       = $new_instance['button'];
       $instance['text_color']   = $new_instance['text_color'];
       $instance['link_color']   = $new_instance['link_color'];
-      // $instance['lang']        = $new_instance['lang'];
+      $instance['lang']         = $new_instance['lang'];
       $instance['width']        = $new_instance['width'];
       $instance['align']        = $new_instance['align'];
 
@@ -95,7 +84,7 @@ class BNS_TFButton_Widget extends WP_Widget {
           'button'        => false, // Blue
           'text_color'    => '186487', // Default blue pallette. The default Grey color would be white (#ffffff); leave empty.
           'link_color'    => '',
-          // 'lang'         => 'en', // Default - English
+          'lang'          => '', // Default - English
           'width'         => '300px',
           'align'         => ''
       );
@@ -143,20 +132,18 @@ class BNS_TFButton_Widget extends WP_Widget {
   		<label>NB: Must be set in pixels to right align.</label>
     </p>
     
-<!-- additional language functionality to be completed ...
  		<p>
 			<label for="<?php echo $this->get_field_id( 'lang' ); ?>"><?php _e('Language (as the two letter ISO-639-1 language code.):'); ?></label>
 			<select id="<?php echo $this->get_field_id( 'lang' ); ?>" name="<?php echo $this->get_field_name( 'lang' ); ?>" class="widefat">
-				<option <?php selected( 'en', $instance['lang'], true ); ?>>English</option>
-				<option <?php selected( 'fr', $instance['lang'], true ); ?>>French</option>
-				<option <?php selected( 'de', $instance['lang'], true ); ?>>German</option>
-				<option <?php selected( 'it', $instance['lang'], true ); ?>>Italian</option>
-				<option <?php selected( 'es', $instance['lang'], true ); ?>>Spanish</option>
-				<option <?php selected( 'ko', $instance['lang'], true ); ?>>Korean</option>
-				<option <?php selected( 'ja', $instance['lang'], true ); ?>>Japanese</option>                                				
+				<option <?php selected( 'en', $instance['lang'], true ); ?>>en</option>
+				<option <?php selected( 'fr', $instance['lang'], true ); ?>>fr</option>
+				<option <?php selected( 'de', $instance['lang'], true ); ?>>de</option>
+				<option <?php selected( 'it', $instance['lang'], true ); ?>>it</option>
+				<option <?php selected( 'es', $instance['lang'], true ); ?>>es</option>
+				<option <?php selected( 'ko', $instance['lang'], true ); ?>>ko</option>
+				<option <?php selected( 'ja', $instance['lang'], true ); ?>>ja</option>
 			</select>
 		</p>
--->
 
 		<?php
 	}
@@ -177,7 +164,7 @@ function bns_tfbutton_shortcode ($atts) {
           'button'        => false, // Blue
           'text_color'    => '186487', // No # symbol needed
           'link_color'    => '',
-          // 'lang'         => 'en', // default: English
+          'lang'          => '', // default: English
           'width'         => '300px',
           'align'         => '', // Left aligned
     ), $atts ),
@@ -199,4 +186,4 @@ function bns_tfbutton_shortcode ($atts) {
 add_shortcode( 'bns_tfbutton', 'bns_tfbutton_shortcode' );
 /* Shortcode end */
 ?>
-<?php /* Last revised June 2, 2011 version 0.1.1 */ ?>
+<?php /* Last revised June 2, 2011 version 0.2 */ ?>

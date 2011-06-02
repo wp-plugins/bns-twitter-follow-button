@@ -1,16 +1,16 @@
 === BNS Twitter Follow Button ===
 Contributors: cais
 Donate link: http://buynowshop.com
-Tags: multi-widget, user-options, twitter, multiple-accounts
+Tags: multi-widget, user-options, twitter, multiple-accounts, language-support
 Requires at least: 2.8
 Tested up to: 3.2
-Stable tag: 0.1.1
+Stable tag: 0.2
 
 Displays a Twitter Follow Button; and, includes shortcode functionality.
 
 == Description ==
 
-A widget to allow you to set the parameters of the Twitter Follow Button found here: https://twitter.com/about/resources/followbutton. This widget also creates a shortcode that can be used in posts and pages. Also to note, each instance of the shortcode or widget can use a different Twitter name so you can have multiple Twitter accounts listed on your website.
+A widget to allow you to set the parameters of the Twitter Follow Button found here: https://twitter.com/about/resources/followbutton. This widget also creates a shortcode that can be used in posts and pages. Also to note, each instance of the shortcode or widget can use a different Twitter name so you can have multiple Twitter accounts listed on your website. Includes support of languages for the Follow Button using the two letter ISO-639-1 language code for English (en), French (fr), German (de), Italian (it), Spanish (es), Korean (ko) and Japanese (ja).
 
 == Installation ==
 
@@ -37,14 +37,15 @@ Reading this article for further assistance: http://wpfirstaid.com/2009/12/plugi
 = Shortcode: bns_ftbutton =
 Parameters are very similar to the plugin ...
 
-*   'title'           => __('')
-*   'twitter_name'    => '', // No @ symbol needed
-*   'data_show_count' => false
-*   'data_button'     => false, // Blue
-*   'data_text_color' => '186487', // No # symbol needed
-*   'data_link_color' => ''
-*   'data_width'      => '300px'
-*   'data_align'      => '', // Left aligned
+*   'title'         => __('')
+*   'twitter_name'  => '', // No @ symbol needed
+*   'show_count'    => false
+*   'button'        => false, // Blue
+*   'text_color'    => '186487', // No # symbol needed
+*   'link_color'    => ''
+*   'width'         => '300px'
+*   'align'         => '', // Left aligned
+*   'lang'          => '' // default English
 
 NB: Use the shortcode at your own risk!
 
@@ -90,6 +91,11 @@ Yes, more to follow ... or read this page: http://dev.twitter.com/pages/follow_b
 Please stay current with your WordPress installation, your active theme, and your plugins.
 
 == Changelog ==
+= 0.2 =
+* added support of languages for the Follow Button using the two letter ISO-639-1 language code
+* languages supported: English (en); French (fr); German (de); Italian (it); Spanish (es); Korean (ko); and, Japanese (ja).
+* updated readme (this file) with corections to shortcode usage / parameters
+
 = 0.1.1 =
 * update to readme.txt file (typos and corrections)
 
