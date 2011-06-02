@@ -4,7 +4,7 @@ Donate link: http://buynowshop.com
 Tags: multi-widget, user-options, twitter, multiple-accounts
 Requires at least: 2.8
 Tested up to: 3.2
-Stable tag: 0.1
+Stable tag: 0.1.1
 
 Displays a Twitter Follow Button; and, includes shortcode functionality.
 
@@ -25,7 +25,7 @@ This section describes how to install the plugin and get it working.
 
 1. Go to 'Plugins' menu under your Dashboard
 2. Click on the 'Add New' link
-3. Search for bns-tfbutton
+3. Search for bns-twitter-follow-button
 4. Install.
 5. Activate through the 'Plugins' menu.
 6. Place the BNS Twitter Follow Button widget appropriately in the Appearance | Widgets section of the dashboard.
@@ -90,6 +90,9 @@ Yes, more to follow ... or read this page: http://dev.twitter.com/pages/follow_b
 Please stay current with your WordPress installation, your active theme, and your plugins.
 
 == Changelog ==
+= 0.1.1 =
+* update to readme.txt file (typos and corrections)
+
 = 0.1 =
 * Initial Release - working beta version
 * released June 1, 2011
