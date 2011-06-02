@@ -1,4 +1,4 @@
-=== BNS Featured Category ===
+=== BNS Twitter Follow Button ===
 Contributors: cais
 Donate link: http://buynowshop.com
 Tags: multi-widget, user-options, twitter, multiple-accounts
