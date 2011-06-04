@@ -34,7 +34,7 @@ This section describes how to install the plugin and get it working.
 Reading this article for further assistance: http://wpfirstaid.com/2009/12/plugin-installation/
 
 ----
-= Shortcode: bns_ftbutton =
+= Shortcode: bns_tfbutton =
 Parameters are very similar to the plugin ...
 
 *   'title'         => __('')
