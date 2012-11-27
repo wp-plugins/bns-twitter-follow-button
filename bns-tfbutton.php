@@ -46,22 +46,11 @@ License URI: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  * The license for this software can also likely be found here:
  * http://www.gnu.org/licenses/gpl-2.0.html
  *
- * @version 0.3.1
- * @date    August 2, 2012
+ * @version 0.3.2
+ * @date    November 27, 2012
+ * Documentation updates
+ * Remove load_plugin_textdomain as redundant
  */
-
-/**
- * BNS Twitter Follow Button TextDomain
- * Make plugin text available for translation (i18n)
- *
- * @package:    BNS_Twitter_Follow_Button
- * @since:      0.3
- *
- * @internal    Translation files are expected to be found in the plugin root folder / directory.
- * @internal    'bns-tfb' is being used in place of 'bns-twitter-follow-button'
- */
-load_plugin_textdomain( 'bns-tfb' );
-// End: BNS Twitter Follow Button TextDomain
 
 /**
  * Check installed WordPress version for compatibility
@@ -100,13 +89,13 @@ class BNS_TFButton_Widget extends WP_Widget {
          */
         $title        = apply_filters( 'widget_title', $instance['title'] );
         $twitter_name = $instance['twitter_name'];
-        $show_count   = $instance['show_count']; /* Followers count display */
-        $button       = $instance['button']; // Button color
-        $text_color   = $instance['text_color']; // Text color
-        $link_color   = $instance['link_color']; // Link color
-        $lang         = $instance['lang']; // Language - default: English
-        $width        = $instance['width']; // Width
-        $align        = $instance['align']; // Alignment
+        $show_count   = $instance['show_count'];    /** Followers count display */
+        $button       = $instance['button'];        /** Button color */
+        $text_color   = $instance['text_color'];    /** Text color */
+        $link_color   = $instance['link_color'];    /** Link color */
+        $lang         = $instance['lang'];          /** Language - default: English */
+        $width        = $instance['width'];         /** Width */
+        $align        = $instance['align'];         /** Alignment */
 
         /** @var $before_widget string - defined by theme */
         echo $before_widget;
@@ -214,6 +203,7 @@ class BNS_TFButton_Widget extends WP_Widget {
         </p>
     <?php }
 }
+
 /** Add shortcode from post: */
 function bns_tfbutton_shortcode( $atts ) {
     /** Start capture */
